@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div class="text-center">
+    <h1 class="display-4">Courses List</h1>
+            <ul style="list-style:none">
+        @foreach (var item in Model)
+        {
+            <li style="text-decoration:none">@item</li>
+
+            <div class="d-flex justify-content-center p-2">
+
+                <input type="button"
+                   class="btn btn-primary"
+                   value="See Student in This Course"
+                   onclick="@("window.location.href='" + @Url.Action($"{@item}", "Student") + $"'");" />
+            </div>
+        }
+            </ul>
+            
+        </div>
+    </div>
+
+</div>
